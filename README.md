@@ -1,4 +1,5 @@
 [![Coverage Status](https://coveralls.io/repos/github/BFisch14/Piezas/badge.svg?branch=master)](https://coveralls.io/github/BFisch14/Piezas?branch=master)
+[![Build Status](https://travis-ci.org/BFisch14/Piezas.svg?branch=master)](https://travis-ci.org/BFisch14/Piezas)
 # Piezas
 
 ## Associated Enumerated Types
