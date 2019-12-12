@@ -1,3 +1,4 @@
+[![Coverage Status](https://coveralls.io/repos/github/BFisch14/Piezas/badge.svg?branch=master)](https://coveralls.io/github/BFisch14/Piezas?branch=master)
 # Piezas
 
 ## Associated Enumerated Types
