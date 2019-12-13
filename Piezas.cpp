@@ -109,7 +109,7 @@ Piece Piezas::dropPiece(int column)
     {
         turn = O;
     }
-    else 
+    else
     {
         turn = X;
     }
@@ -136,17 +136,12 @@ Piece Piezas::dropPiece(int column)
 Piece Piezas::pieceAt(int row, int column)
 {
   
-  if (row < 0 || (row > BOARD_ROWS -1) || column < 0 || (column > BOARD_COLS - 1))
+  if (row < 0 || row > BOARD_ROWS || column < 0 || column > BOARD_COLS)
   {
     return Invalid;
   }
-
-  else if (board[row][column] != Blank)
-  {
-   return board[row][column];
-  }
   
-  return Blank;
+  return board[row][column];
   
 }
 
