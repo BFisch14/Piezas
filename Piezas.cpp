@@ -141,11 +141,11 @@ Piece Piezas::pieceAt(int row, int column)
     return Invalid;
   }
 
-  else if (board[row][column] != Blank)
+  /*else if (board[row][column] != Blank)
   {
    return board[row][column];
   }
-
+  */
   return Blank;
   
 }
