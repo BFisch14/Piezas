@@ -64,7 +64,7 @@ Piece Piezas::dropPiece(int column)
   {
     return Invalid;    
   }  
-  while (BOARD_ROWS)
+  
   if (board[0][column] == Blank)
   {
     board[0][column] = turn;
