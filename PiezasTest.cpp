@@ -92,24 +92,38 @@ TEST(PiezasTest, resetOnEmpty)
 }
 
 // drop piece tests
+TEST(PiezasTest, dropPieceInvalidNegative)
+{
+  Piezas piezas;
+  ASSERT_EQ(piezas.dropPiece(-8), Invalid);
+}
+
 TEST(PiezasTest, dropPieceInvalid)
 {
-  
+  Piezas piezas;
+  ASSERT_EQ(piezas.dropPiece(8), Invalid);
 }
 
 TEST(PiezasTest, dropPieceBlank)
 {
-  
+  Piezas piezas;
+  piezas.dropPiece(0);
+  piezas.dropPiece(0);
+  piezas.dropPiece(0);
+  ASSERT_EQ(piezas.dropPiece(0), Blank);
 }
 
 TEST(PiezasTest, dropPieceXcol0)
 {
-  
+  Piezas piezas;
+  ASSERT_EQ(piezas.dropPiece(0), X);
 }
 
 TEST(PiezasTest, dropPieceYcol0)
 {
-  
+  Piezas piezas;
+  piezas.dropPiece(0);
+  ASSERT_EQ(piezas.dropPiece(0), O);
 }
 //piece at tests
 TEST(PiezasTest, pieceAtBlank)
