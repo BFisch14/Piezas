@@ -22,6 +22,7 @@
 **/
 Piezas::Piezas()
 {
+  
 }
 
 /**
@@ -30,6 +31,7 @@ Piezas::Piezas()
 **/
 void Piezas::reset()
 {
+
 }
 
 /**
@@ -42,6 +44,7 @@ void Piezas::reset()
 **/ 
 Piece Piezas::dropPiece(int column)
 {
+
     return Blank;
 }
 
