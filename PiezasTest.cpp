@@ -92,16 +92,16 @@ TEST(PiezasTest, resetOnEmpty)
 }
 
 // drop piece tests
-TEST(PiezasTest, dropPieceInvalidNegative)
-{
-  Piezas piezas;
-  ASSERT_EQ(piezas.dropPiece(-8), Invalid);
-}
-
 TEST(PiezasTest, dropPieceInvalid)
 {
   Piezas piezas;
   ASSERT_EQ(piezas.dropPiece(8), Invalid);
+}
+
+TEST(PiezasTest, dropPieceInvalidNegative)
+{
+  Piezas piezas;
+  ASSERT_EQ(piezas.dropPiece(-8), Invalid);
 }
 
 TEST(PiezasTest, dropPieceBlank)
@@ -128,42 +128,115 @@ TEST(PiezasTest, dropPieceYcol0)
 //piece at tests
 TEST(PiezasTest, pieceAtBlank)
 {
-
+  Piezas piezas;
+  ASSERT_EQ(piezas.pieceAt(0, 0), Blank);
 }
 
-TEST(PiezasTest, pieceAtInvalid)
+TEST(PiezasTest, pieceAtInvalidRow)
 {
+  Piezas piezas;
+  ASSERT_EQ(piezas.pieceAt(-9, 0), Blank);
+}
 
+TEST(PiezasTest, pieceAtInvalidCol)
+{
+  Piezas piezas;
+  ASSERT_EQ(piezas.pieceAt(0, -9), Blank);
 }
 
 TEST(PiezasTest, pieceAt11X)
 {
-
+  Piezas piezas;
+  piezas.dropPiece(1);
+  piezas.dropPiece(0);
+  piezas.dropPiece(1);
+  ASSERT_EQ(piezas.pieceAt(1, 1), X);
 }
 
-TEST(PiezasTest, pieceAt11Y)
+TEST(PiezasTest, pieceAt11O)
 {
-
+  Piezas piezas;
+  piezas.dropPiece(1);
+  piezas.dropPiece(1);
+  ASSERT_EQ(piezas.pieceAt(1, 1), O);
 }
 
 //game state tests
 TEST(PiezasTest, gameStateNotFull)
 {
-
+  Piezas piezas;
+  piezas.dropPiece(1); // X
+  piezas.dropPiece(-1); // O
+  piezas.dropPiece(1); // X
+  piezas.dropPiece(0); // O
+  piezas.dropPiece(1); // X
+  piezas.dropPiece(0); // O
+  piezas.dropPiece(0); // X
+  ASSERT_EQ(piezas.gameState(), Invalid);
 }
 
-TEST(PiezasTest, gameStateXWinner)
+TEST(PiezasTest, gameStateX4Across)
 {
+  Piezas piezas;
+  piezas.dropPiece(1); // X
+  piezas.dropPiece(-1); // O
+  piezas.dropPiece(1); // X
+  piezas.dropPiece(0); // O
+  piezas.dropPiece(1); // X
+  piezas.dropPiece(0); // O
+  piezas.dropPiece(0); // X
+  piezas.dropPiece(2); // O
+  piezas.dropPiece(2); // X
+  piezas.dropPiece(-8); // O
+  piezas.dropPiece(2); // X
+  piezas.dropPiece(2); // O
+  piezas.dropPiece(3); // X
+  piezas.dropPiece(3); // O
+  piezas.dropPiece(3); // X
+  ASSERT_EQ(piezas.gameState(), X);
 
 }
 
 TEST(PiezasTest, gameStateYWinner)
 {
-
+  Piezas piezas;
+  piezas.dropPiece(-1); // X
+  piezas.dropPiece(0); // O
+  piezas.dropPiece(2); // X
+  piezas.dropPiece(0); // O
+  piezas.dropPiece(3); // X
+  piezas.dropPiece(0); // O
+  piezas.dropPiece(0); // X
+  piezas.dropPiece(1); // O
+  piezas.dropPiece(1); // X
+  piezas.dropPiece(1); // O
+  piezas.dropPiece(-2); // X
+  piezas.dropPiece(2); // O
+  piezas.dropPiece(2); // X
+  piezas.dropPiece(3); // O
+  piezas.dropPiece(3); // X
+  ASSERT_EQ(piezas.gameState(), O);
 }
 
 TEST(PiezasTest, gameStateTie)
 {
-
+  Piezas piezas;
+  piezas.dropPiece(0); // X
+  piezas.dropPiece(1); // O
+  piezas.dropPiece(2); // X
+  piezas.dropPiece(3); // O
+  piezas.dropPiece(0); // X
+  piezas.dropPiece(1); // O
+  piezas.dropPiece(2); // X
+  piezas.dropPiece(3); // O
+  piezas.dropPiece(0); // X
+  piezas.dropPiece(1); // O
+  piezas.dropPiece(2); // X
+  piezas.dropPiece(3); // O
+  piezas.dropPiece(0); // X
+  piezas.dropPiece(1); // O
+  piezas.dropPiece(2); // X
+  piezas.dropPiece(3); // O
+  ASSERT_EQ(piezas.gameState(), Blank);
 }
 
