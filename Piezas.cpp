@@ -64,7 +64,7 @@ Piece Piezas::dropPiece(int column)
   {
     return Invalid;    
   }  
-  
+
   if (board[0][column] == Blank)
   {
     board[0][column] = turn;
@@ -125,7 +125,20 @@ Piece Piezas::dropPiece(int column)
 **/
 Piece Piezas::pieceAt(int row, int column)
 {
-    return Blank;
+    if (row < 0 || row > BOARD_ROWS || column < 0 || column > BOARD_COLS)
+    {
+      return Invalid;
+    }
+
+    else if (board[row][column] != Blank)
+    {
+      return board[row][column];
+    }
+
+    else 
+    {
+      return Blank;
+    }
 }
 
 /**
