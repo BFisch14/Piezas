@@ -63,6 +63,14 @@ Piece Piezas::dropPiece(int column)
   
   if(column > BOARD_COLS || column < 0)
   {
+    if (turn == X)
+    {
+        turn = O;
+    }
+    else if (turn == O)
+    {
+        turn = X;
+    }
     return Invalid;    
   }  
 
@@ -108,14 +116,14 @@ Piece Piezas::dropPiece(int column)
     return board[2][column];
   }
 
-    if (turn == X)
-    {
-        turn = O;
-    }
-    else if (turn == O)
-    {
-        turn = X;
-    }
+  if (turn == X)
+  {
+   turn = O;
+  }
+  else if (turn == O)
+  {
+   turn = X;
+  }
     
   return Blank;
   
@@ -127,7 +135,7 @@ Piece Piezas::dropPiece(int column)
 **/
 Piece Piezas::pieceAt(int row, int column)
 {
-  /*
+  
   if (row < 0 || row > BOARD_ROWS || column < 0 || column > BOARD_COLS)
   {
     return Invalid;
@@ -137,7 +145,7 @@ Piece Piezas::pieceAt(int row, int column)
   {
    return board[row][column];
   }
-*/
+
   return Blank;
   
 }
