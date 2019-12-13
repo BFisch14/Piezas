@@ -60,7 +60,7 @@ void Piezas::reset()
 **/ 
 Piece Piezas::dropPiece(int column)
 {
-  /*
+  
   if(column > BOARD_COLS || column < 0)
   {
     return Invalid;    
@@ -116,7 +116,7 @@ Piece Piezas::dropPiece(int column)
     {
         turn = X;
     }
-    */
+    
   return Blank;
   
 }
