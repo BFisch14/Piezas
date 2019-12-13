@@ -37,7 +37,7 @@ TEST(PiezasTest, resetFull)
   piezas.dropPiece(3);
   piezas.reset();
   
-	ASSERT_EQ(piezas.pieceAt(0, 0), Blank);
+	ASSERT_EQ(piezas.pieceAt(0, 3), Blank);
 }
 
 TEST(PiezasTest, resetPartialFull)
@@ -50,7 +50,7 @@ TEST(PiezasTest, resetPartialFull)
   piezas.dropPiece(1);
   piezas.dropPiece(1);
   piezas.reset();
-  ASSERT_EQ(piezas.pieceAt(0, 0), Blank);
+  ASSERT_EQ(piezas.pieceAt(1, 1), Blank);
 }
 
 TEST(PiezasTest, resetOnEmpty)
