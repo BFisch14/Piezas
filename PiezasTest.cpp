@@ -36,23 +36,13 @@ TEST(PiezasTest, resetFull)
   piezas.dropPiece(3);
   piezas.dropPiece(3);
   piezas.reset();
-  for(int i = 0; i < BOARD_COLS; i++)
-  {
-	  for(int j = 0; j < BOARD_ROWS; j++)
-	  {
-		  if(piezas.pieceAt(i, j) != Blank)
-		  {
-		    check = false;
-		  } 
-	  }
-  }
-	ASSERT_EQ(check, true);
+  
+	ASSERT_EQ(piezas.pieceAt(0, 0), Blank);
 }
 
 TEST(PiezasTest, resetPartialFull)
 {
   Piezas piezas;
-  bool check = true;
   piezas.dropPiece(0);
   piezas.dropPiece(0);
   piezas.dropPiece(0);
@@ -60,35 +50,14 @@ TEST(PiezasTest, resetPartialFull)
   piezas.dropPiece(1);
   piezas.dropPiece(1);
   piezas.reset();
-  for(int i = 0; i < BOARD_COLS; i++)
-  {
-	  for(int j = 0; j < BOARD_ROWS; j++)
-	  {
-		  if(piezas.pieceAt(i, j) != Blank)
-		  {
-		    check = false;
-		  } 
-	  }
-  }
-	ASSERT_EQ(check, true);
+  ASSERT_EQ(piezas.pieceAt(0, 0), Blank);
 }
 
 TEST(PiezasTest, resetOnEmpty)
 {
   Piezas piezas;
-  bool check = true;
   piezas.reset();
-  for(int i = 0; i < BOARD_COLS; i++)
-  {
-	  for(int j = 0; j < BOARD_ROWS; j++)
-	  {
-		  if(piezas.pieceAt(i, j) != Blank)
-		  {
-		    check = false;
-		  } 
-	  }
-  }
-	ASSERT_EQ(check, true);
+  ASSERT_EQ(piezas.pieceAt(0, 0), Blank);
 }
 
 // drop piece tests
