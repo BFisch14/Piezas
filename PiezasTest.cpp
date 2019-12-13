@@ -135,13 +135,13 @@ TEST(PiezasTest, pieceAtBlank)
 TEST(PiezasTest, pieceAtInvalidRow)
 {
   Piezas piezas;
-  ASSERT_EQ(piezas.pieceAt(-9, 0), Blank);
+  ASSERT_EQ(piezas.pieceAt(-9, 0), Invalid);
 }
 
 TEST(PiezasTest, pieceAtInvalidCol)
 {
   Piezas piezas;
-  ASSERT_EQ(piezas.pieceAt(0, -9), Blank);
+  ASSERT_EQ(piezas.pieceAt(0, -9), Invalid);
 }
 
 TEST(PiezasTest, pieceAt11X)
