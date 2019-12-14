@@ -22,7 +22,6 @@ TEST(PiezasTest, sanityCheck)
 TEST(PiezasTest, resetFull)
 {
   Piezas piezas;
-  bool check = true;
   piezas.dropPiece(0);
   piezas.dropPiece(0);
   piezas.dropPiece(0);
