@@ -135,7 +135,6 @@ TEST(PiezasTest, gameStateNotFull)
 {
   Piezas piezas;
   piezas.dropPiece(1); // X
-  piezas.dropPiece(-1); // O
   piezas.dropPiece(1); // X
   piezas.dropPiece(0); // O
   piezas.dropPiece(1); // X
