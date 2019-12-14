@@ -181,7 +181,7 @@ Piece Piezas::gameState()
   {
     for (int j = 0; j < BOARD_ROWS; j++)
     {
-      if (board[i][j] == X)
+      if (board[j][i] == X)
       {
         curLongestX++;
         if (curLongestX > maxX)
