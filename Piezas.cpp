@@ -141,7 +141,7 @@ Piece Piezas::gameState()
       }
     }
   }
-  if (complete = false)
+  if (complete == false)
   {
     return Invalid;
   }
