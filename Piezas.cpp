@@ -154,6 +154,8 @@ Piece Piezas::gameState()
 
   for (int i = 0; i < BOARD_ROWS; i++)
   {
+    curLongestO = 0;
+    curLongestX = 0;
     for (int j = 0; j < BOARD_COLS; j++)
     {
       if (board[i][j] == X)
@@ -179,6 +181,8 @@ Piece Piezas::gameState()
 
   for (int i = 0; i < BOARD_COLS; i++)
   {
+    curLongestX = 0;
+    curLongestO = 0;
     for (int j = 0; j < BOARD_ROWS; j++)
     {
       if (board[j][i] == X)
