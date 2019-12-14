@@ -130,5 +130,62 @@ Piece Piezas::pieceAt(int row, int column)
 **/
 Piece Piezas::gameState()
 {
-    return Blank;
+  bool complete = true;
+  for (int i = 0; i < BOARD_ROWS; i++)
+  {
+    for (int j = 0; j < BOARD_COLS; j++)
+    {
+      if (board[i][j] == Blank)
+      {
+        complete = false;
+      }
+    }
+  }
+  if (complete = false)
+  {
+    return Invalid;
+  }
+
+
+  int curLongestX = 0;
+  int curLongestO = 0;
+  int maxX = 0;
+  int maxO = 0;
+
+  for (int i = 0; i < BOARD_ROWS; i++)
+  {
+    for (int j = 0; j < BOARD_COLS; j++)
+    {
+      if (board[i][j] == X)
+      {
+        curLongestX++;
+        if (curLongestX > maxX)
+        {
+          maxX = curLongestX;
+        }
+        curLongestO = 0;
+      }
+      else
+      {
+        curLongestO++;
+        if (curLongestO > maxO)
+        {
+          maxO = curLongestO; 
+        }
+        curLongestX = 0;
+      }
+    }
+  }
+    if (maxO > maxX)
+    {
+      return X;
+    }
+    else if (maxO < maxX)
+    {
+      return O;
+    }
+    else
+    {
+      return Blank;
+    }
 }
