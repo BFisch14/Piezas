@@ -176,6 +176,33 @@ Piece Piezas::gameState()
       }
     }
   }
+
+  for (int i = 0; i < BOARD_COLS; i++)
+  {
+    for (int j = 0; j < BOARD_ROWS; j++)
+    {
+      if (board[i][j] == X)
+      {
+        curLongestX++;
+        if (curLongestX > maxX)
+        {
+          maxX = curLongestX;
+        }
+        curLongestO = 0;
+      }
+      else
+      {
+        curLongestO++;
+        if (curLongestO > maxO)
+        {
+          maxO = curLongestO; 
+        }
+        curLongestX = 0;
+      }
+    }
+  }
+
+
     if (maxO > maxX)
     {
       return X;
